@@ -34,7 +34,7 @@ Pour développer et tester le mini-projet en local, voici les étapes à suivre 
 1. Cloner ce dépôt sur votre machine locale :
 
    ```bash
-   git clone git@github.com:heig-vd-devprodmed-course/heig-vd-devprodmed-mini-projet.git
+   git clone git@github.com:heig-vd-devprodmed-course-2025-2026/devprodmed-mini-projet-CyberGhetto-25.git
 
    cd heig-vd-devprodmed-mini-projet
    ```
