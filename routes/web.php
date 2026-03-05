@@ -8,6 +8,27 @@ Route::get('/test-view', function () {
     return view('test');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/', function () {
+    $posts = Post::orderBy('created_at', 'desc')->with('user')->with('likes')->get();
+
+    return view('home', ['posts' => $posts]);
+});
+
+Route::get('/profile', function () {
+    $user   = User::where('username', 'janedoe')->first();
+
+    $posts = Post::where('user_id', $user->id)
+        ->orderBy('created_at', 'desc')
+        ->with(['user', 'likes'])
+        ->get();
+
+    return view('profile', ['user' => $user, 'posts' => $posts]);
+});
+
 Route::get('/test-user', function () {
     $user = new User();
 
