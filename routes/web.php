@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Post;
 
+Route::get('/test-view', function () {
+    return view('test');
+});
+
 Route::get('/test-user', function () {
     $user = new User();
 
