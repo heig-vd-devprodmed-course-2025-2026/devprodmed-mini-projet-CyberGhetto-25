@@ -17,10 +17,6 @@ Route::get('/test-user', function () {
     return $user;
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/test-post-1', function () {
     // Récupère la première personne dans la table `users`, peu importe son ID
     $user = User::first();
