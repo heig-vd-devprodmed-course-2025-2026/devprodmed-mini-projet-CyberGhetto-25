@@ -6,7 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
-    $posts = Post::orderBy('created_at', 'desc')->with('user')->with('likes')->get();
+    $posts = Post::orderBy('created_at', 'desc')->with('user')->with('likes')->limit(3)->get();
 
     return view('home', ['posts' => $posts]);
 });
