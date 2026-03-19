@@ -47,5 +47,23 @@ return [
             'description' => 'Modifiez le post ":post_title" pour mettre à jour son contenu.',
             'description_without_post_title' => 'Modifiez le post pour mettre à jour son contenu.',
         ],
-    ],
+        'form' => [
+            'fields' => [
+                'title' => [
+                    'label' => 'Titre (optionnel)',
+                    'placeholder' => 'Entrez un titre pour votre post (optionnel)',
+                ],
+                'content' => [
+                    'label' => 'Contenu',
+                    'placeholder' => 'Exprimez-vous librement dans votre post...',
+                ],
+            ],
+            'actions' => [
+                'submit' => 'Sauvegarder',
+                'cancel' => 'Annuler',
+                'delete' => 'Supprimer',
+                'delete_confirm' => 'Souhaitez-vous vraiment supprimer ce post ? Cette action est irréversible.',
+            ]
+        ]
+    ]
 ];
