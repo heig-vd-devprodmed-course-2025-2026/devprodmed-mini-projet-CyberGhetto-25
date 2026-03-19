@@ -14,6 +14,8 @@ return [
         'title' => 'Profil de :username',
         'description' => 'Page de profil pour :username.',
         'number_of_posts' => '{0} Aucune publication|{1} :count publication|[2,*] :count publications',
+        'posts_heading' => 'Posts de :first_name :last_name',
+        'member_since' => 'Membre depuis le :date.'
     ],
     'about' => [
         'title' => 'À propos',
@@ -65,5 +67,50 @@ return [
                 'delete_confirm' => 'Souhaitez-vous vraiment supprimer ce post ? Cette action est irréversible.',
             ]
         ]
+    ],
+    'my_profile' => [
+        'edit' => [
+            'title' => 'Modifier son profil',
+            'description' => 'Page pour modifier son propre profil utilisateur',
+        ],
+        'show' => [
+            'title' => 'Visualiser mon profil',
+            'description' => 'Page de visualisation de son propre profil utilisateur.',
+            'member_since' => 'Membre depuis le :date.',
+            'actions' => [
+                'edit' => 'Modifier le profil',
+                'view_public' => 'Voir le profil public',
+            ],
+        ],
+        'form' => [
+            'fields' => [
+                'profile_picture' => [
+                    'label' => 'Photo de profil',
+                    'help' => 'Formats acceptés: JPG, JPEG, PNG, BMP, GIF, WEBP. Taille maximale: 2 Mo.',
+                ],
+                'username' => [
+                    'label' => "Nom d'utilisateur",
+                    'placeholder' => "Entrez votre nom d'utilisateur",
+                ],
+                'email' => [
+                    'label' => 'Adresse e-mail',
+                    'placeholder' => 'Entrez votre adresse e-mail',
+                ],
+                'first_name' => [
+                    'label' => 'Prénom',
+                    'placeholder' => 'Entrez votre prénom',
+                ],
+                'last_name' => [
+                    'label' => 'Nom',
+                    'placeholder' => 'Entrez votre nom',
+                ],
+            ],
+            'actions' => [
+                'submit' => 'Sauvegarder',
+                'cancel' => 'Annuler',
+                'delete' => 'Supprimer le compte',
+                'delete_confirm' => 'Souhaitez-vous vraiment supprimer votre compte ? Cette action est irréversible.',
+            ],
+        ],
     ]
 ];

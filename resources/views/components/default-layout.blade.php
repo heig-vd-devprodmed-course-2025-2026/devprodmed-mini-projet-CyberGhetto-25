@@ -30,7 +30,7 @@
                         {{ __('ui.posts.index.title') }}
                     </a>
                 </div>
-                    <a href="{{ url('/profile') }}" class="block hover:opacity-80 transition">
+                    <a href="{{ url('/my-profile') }}" class="block hover:opacity-80 transition">
     <img
         src="/icons/profile.svg"
         alt="{{ __('ui.profile.title') }}"
