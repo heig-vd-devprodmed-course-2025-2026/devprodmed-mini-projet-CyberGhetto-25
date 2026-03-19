@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -30,7 +31,21 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'nullable|string|max:255',
+            'content' => 'required|string|min:3|max:5000',
+        ]);
+
+        $user = User::where('id', 2)->first();
+        $post = new Post();
+
+        $post->title = $validated['title'];
+        $post->content = $validated['content'];
+        $post->user()->associate($user);
+
+        $post->save();
+
+        return redirect("/posts/$post->id");
     }
 
     /**
@@ -58,7 +73,19 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'nullable|string|max:255',
+            'content' => 'required|string|min:3|max:5000',
+        ]);
+
+        $post = Post::findOrFail($id);
+
+        $post->title = $validated['title'];
+        $post->content = $validated['content'];
+
+        $post->save();
+
+        return redirect("/posts/$post->id");
     }
 
     /**
@@ -66,6 +93,8 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Post::destroy($id);
+
+        return redirect("/posts");
     }
 }
