@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MyProfileController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     $posts = Post::orderBy('created_at', 'desc')->with('user')->with('likes')->limit(3)->get();
@@ -24,3 +25,11 @@ Route::resource('posts', PostController::class);
 Route::match(['put', 'patch'], '/likes/{post}', [LikeController::class, 'update']);
 
 Route::singleton('my-profile', MyProfileController::class)->destroyable();
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/auth/register', 'showRegister');
+    Route::post('/auth/register', 'register');
+    Route::get('/auth/login', 'showLogin');
+    Route::post('/auth/login', 'login');
+    Route::post('/auth/logout', 'logout');
+});

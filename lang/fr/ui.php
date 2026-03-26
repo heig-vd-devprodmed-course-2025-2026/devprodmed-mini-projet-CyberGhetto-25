@@ -80,6 +80,7 @@ return [
             'actions' => [
                 'edit' => 'Modifier le profil',
                 'view_public' => 'Voir le profil public',
+                'logout' => 'Se déconnecter'
             ],
         ],
         'form' => [
@@ -112,5 +113,68 @@ return [
                 'delete_confirm' => 'Souhaitez-vous vraiment supprimer votre compte ? Cette action est irréversible.',
             ],
         ],
+    ],
+    'auth' => [
+        'login' => [
+            'title' => 'Connexion',
+            'description' => 'Connectez-vous à votre compte :app_name.',
+            'form' => [
+                'fields' => [
+                    'email' => [
+                        'label' => 'Adresse e-mail',
+                        'placeholder' => 'Entrez votre adresse e-mail',
+                    ],
+                    'password' => [
+                        'label' => 'Mot de passe',
+                        'placeholder' => 'Entrez votre mot de passe',
+                    ],
+                    'remember' => [
+                        'label' => 'Se souvenir de moi',
+                    ],
+                ],
+                'actions' => [
+                    'submit' => 'Se connecter',
+                ],
+            ],
+            'no_account' => 'Pas encore de compte ?',
+            'register' => "S'inscrire",
+        ],
+        'register' => [
+            'title' => 'Inscription',
+            'description' => 'Créez votre compte sur :app_name pour commencer à partager vos idées.',
+            'form' => [
+                'fields' => [
+                    'username' => [
+                        'label' => "Nom d'utilisateur",
+                        'placeholder' => "Choisissez votre nom d'utilisateur",
+                    ],
+                    'email' => [
+                        'label' => 'Adresse e-mail',
+                        'placeholder' => 'Entrez votre adresse e-mail',
+                    ],
+                    'first_name' => [
+                        'label' => 'Prénom',
+                        'placeholder' => 'Entrez votre prénom',
+                    ],
+                    'last_name' => [
+                        'label' => 'Nom',
+                        'placeholder' => 'Entrez votre nom',
+                    ],
+                    'password' => [
+                        'label' => 'Mot de passe',
+                        'placeholder' => 'Choisissez un mot de passe sécurisé',
+                    ],
+                    'password_confirmation' => [
+                        'label' => 'Confirmation du mot de passe',
+                        'placeholder' => 'Confirmez votre mot de passe',
+                    ],
+                ],
+                'actions' => [
+                    'submit' => "S'inscrire",
+                ],
+            ],
+            'already_have_account' => 'Vous avez déjà un compte ?',
+            'login' => 'Se connecter',
+        ]
     ]
 ];
