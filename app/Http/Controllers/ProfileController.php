@@ -17,7 +17,7 @@ class ProfileController extends Controller
 
         $posts = Post::where('user_id', $user->id)
             ->orderBy('created_at', 'desc')
-            ->with(['user', 'likes'])
+            ->with(['user', 'likes', 'comments'])
             ->get();
 
         return view('profile', ['user' => $user, 'posts' => $posts]);
