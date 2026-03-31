@@ -130,4 +130,70 @@
             </ul>
         </footer>
     </article>
+
+    <section class="mt-6">
+        <h2 class="text-xl font-bold dark:text-white mb-4">
+            {{ trans_choice('ui.posts.comments.count', count($post->comments)) }}
+        </h2>
+
+        @forelse ($post->comments->sortByDesc('created_at') as $comment)
+            <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-4 mb-3">
+                <div class="flex items-center justify-between mb-2">
+                    <a href="{{ url('@' . $comment->user->username) }}" class="font-semibold text-sm dark:text-white hover:underline">
+                        {{ '@' . $comment->user->username }}
+                    </a>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-gray-500 dark:text-gray-400" title="{{ $comment->created_at->isoFormat('LLLL') }}">
+                            {{ $comment->created_at->diffForHumans() }}
+                        </span>
+                        @can('delete', $comment)
+                            <form method="POST" action="{{ url('/posts/' . $post->id . '/comments/' . $comment->id) }}"
+                                onsubmit="return confirm('{{ __('ui.posts.comments.delete_confirm') }}')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-xs text-red-500 hover:underline cursor-pointer">
+                                    {{ __('ui.posts.comments.delete') }}
+                                </button>
+                            </form>
+                        @endcan
+                    </div>
+                </div>
+                <p class="text-sm dark:text-gray-300">{{ $comment->content }}</p>
+            </div>
+        @empty
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+                {{ trans_choice('ui.posts.comments.count', 0) }}
+            </p>
+        @endforelse
+
+        <div class="mt-6">
+            @auth
+                <form method="POST" action="{{ url('/posts/' . $post->id . '/comments') }}" class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-4">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="content" class="block text-sm font-medium dark:text-white mb-1">
+                            {{ __('ui.posts.comments.form.label') }}
+                        </label>
+                        <textarea
+                            id="content"
+                            name="content"
+                            rows="3"
+                            placeholder="{{ __('ui.posts.comments.form.placeholder') }}"
+                            class="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 text-sm dark:bg-slate-700 dark:text-white"
+                        >{{ old('content') }}</textarea>
+                        @error('content')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <button type="submit" class="text-sm bg-teal-600 dark:bg-purple-900 text-white px-4 py-2 rounded-md hover:opacity-90 cursor-pointer">
+                        {{ __('ui.posts.comments.form.submit') }}
+                    </button>
+                </form>
+            @else
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    <a href="{{ route('login') }}" class="underline">{{ __('ui.posts.comments.login_to_comment') }}</a>
+                </p>
+            @endguest
+        </div>
+    </section>
 </x-default-layout>

@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->with('user')->with('likes')->get();
+        $posts = Post::orderBy('created_at', 'desc')->with(['user', 'likes', 'comments'])->get();
 
         return view('posts.index', ['posts' => $posts]);
     }
@@ -54,7 +54,7 @@ class PostController extends Controller
      */
     public function show(string $id)
     {
-        $post = Post::with('user')->with('likes')->findOrFail($id);
+        $post = Post::with(['user', 'likes', 'comments.user'])->findOrFail($id);
 
         $user = Auth::user();
         $reaction = null;

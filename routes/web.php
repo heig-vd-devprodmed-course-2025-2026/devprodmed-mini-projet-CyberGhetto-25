@@ -7,9 +7,10 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MyProfileController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 
 Route::get('/', function () {
-    $posts = Post::orderBy('created_at', 'desc')->with('user')->with('likes')->limit(3)->get();
+    $posts = Post::orderBy('created_at', 'desc')->with(['user', 'likes', 'comments'])->limit(3)->get();
 
     return view('home', ['posts' => $posts]);
 });
@@ -24,6 +25,11 @@ Route::resource('posts', PostController::class)->except(['index', 'show'])->midd
 Route::resource('posts', PostController::class)->only(['index', 'show']);
 
 Route::match(['put', 'patch'], '/likes/{post}', [LikeController::class, 'update'])->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/posts/{post}/comments', [CommentController::class, 'store']);
+    Route::delete('/posts/{post}/comments/{comment}', [CommentController::class, 'destroy']);
+});
 
 Route::singleton('my-profile', MyProfileController::class)->destroyable()->middleware('auth');
 

@@ -49,6 +49,18 @@ return [
             'description' => 'Modifiez le post ":post_title" pour mettre à jour son contenu.',
             'description_without_post_title' => 'Modifiez le post pour mettre à jour son contenu.',
         ],
+        'comments' => [
+            'heading' => 'Commentaires',
+            'count' => '{0} Aucun commentaire|{1} :count commentaire|[2,*] :count commentaires',
+            'login_to_comment' => 'Connectez-vous pour laisser un commentaire.',
+            'form' => [
+                'label' => 'Votre commentaire',
+                'placeholder' => 'Écrivez votre commentaire...',
+                'submit' => 'Commenter',
+            ],
+            'delete_confirm' => 'Souhaitez-vous vraiment supprimer ce commentaire ?',
+            'delete' => 'Supprimer',
+        ],
         'form' => [
             'fields' => [
                 'title' => [

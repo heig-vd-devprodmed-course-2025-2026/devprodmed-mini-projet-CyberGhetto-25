@@ -37,9 +37,17 @@
 
     <footer class="pt-4 border-t border-gray-200 dark:border-gray-700">
         <div class="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
-            <a href="{{ url('/posts/' . $post->id) }}" class="font-semibold">
-                {{ trans_choice('ui.posts.likes_count', count($post->likes)) }}
-            </a>
+            <div class="flex items-center gap-3 font-semibold">
+                <a href="{{ url('/posts/' . $post->id) }}">
+                    {{ trans_choice('ui.posts.likes_count', count($post->likes)) }}
+                </a>
+                @if (count($post->comments) > 1)
+                <span>·</span>
+                <a href="{{ url('/posts/' . $post->id) }}">
+                    {{ trans_choice('ui.posts.comments.count', count($post->comments)) }}
+                </a>
+                @endif
+            </div>
             <a href="{{ url('/posts/' . $post->id) }}"
                 class="px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800">
                 {{ __('ui.posts.view_post') }}
