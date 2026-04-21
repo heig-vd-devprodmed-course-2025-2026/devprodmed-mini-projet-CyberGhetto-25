@@ -46,4 +46,12 @@ class User extends Authenticatable
         ->withPivot('status')
         ->withTimestamps();
     }
+
+    /**
+    * Check if the user is an organizer.
+    */
+    public function isOrganizer(): bool
+    {
+        return $this->role === 'organizer';
+    }
 }
