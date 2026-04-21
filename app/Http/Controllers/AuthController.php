@@ -31,6 +31,7 @@ class AuthController extends Controller
         $user->first_name = $validated['first_name'];
         $user->last_name = $validated['last_name'];
         $user->password = Hash::make($validated['password']);
+        $user->role = 'participant';
         $user->save();
 
         Auth::login($user);

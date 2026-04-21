@@ -23,15 +23,15 @@ class AttendanceController extends Controller
             ->first();
 
         if ($existingAttendance) {
-            // Même status → (toggle off)
+            // Même status -> (toggle off)
             if ($existingAttendance->pivot->status === $status) {
                 $event->attendances()->detach($user->id);
             } else {
-                // Status différent → mise à jour
+                // Status différent -> mise à jour
                 $event->attendances()->updateExistingPivot($user->id, ['status' => $status]);
             }
         } else {
-            // Pas de participation → création
+            // Pas de participation -> création
             $event->attendances()->attach($user->id, ['status' => $status]);
         }
 
