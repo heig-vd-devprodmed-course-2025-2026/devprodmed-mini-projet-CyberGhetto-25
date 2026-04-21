@@ -156,13 +156,16 @@ return [
     'uppercase'              => 'Le champ :attribute doit être en majuscules.',
     'url'                    => 'Le format de l\'URL de :attribute n\'est pas valide.',
     'uuid'                   => 'Le champ :attribute doit être un UUID valide',
-    'attributes' => [
+    'attributes'             => [
         'content'         => 'contenu',
-        'title'           => 'titre',
         'email'           => 'adresse e-mail',
+        'expiration_date' => "date d'expiration",
         'first_name'      => 'prénom',
         'last_name'       => 'nom',
+        'name'            => 'nom',
         'profile_picture' => 'photo de profil',
-        'username'        => "nom d'utilisateur",
-    ]
+        'scopes'          => 'permissions',
+        'title'           => 'titre',
+        'username'        => 'nom d\'utilisateur',
+    ],
 ];
