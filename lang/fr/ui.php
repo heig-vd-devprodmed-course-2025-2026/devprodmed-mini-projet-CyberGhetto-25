@@ -145,6 +145,7 @@ return [
                 'edit' => 'Modifier le profil',
                 'view_public' => 'Voir le profil public',
                 'manage_tokens' => "Gérer les jetons d'accès",
+                'become_organizer' => 'Devenir organisateur',
                 'logout' => 'Se déconnecter'
             ],
         ],
