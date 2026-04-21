@@ -9,6 +9,8 @@ use App\Http\Controllers\MyProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TokenController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\EventController;
 
 Route::get('/', function () {
     $posts = Post::orderBy('created_at', 'desc')->with(['user', 'likes', 'comments'])->limit(3)->get();
@@ -43,3 +45,8 @@ Route::controller(AuthController::class)->group(function () {
 });
 
 Route::resource('tokens', TokenController::class)->only(['index', 'create', 'store', 'destroy'])->middleware('auth');
+
+Route::resource('events', EventController::class)->except(['index', 'show'])->middleware('auth');
+Route::resource('events', EventController::class)->only(['index', 'show']);
+
+Route::put('/attendances/{event}', [AttendanceController::class, 'update'])->middleware('auth');

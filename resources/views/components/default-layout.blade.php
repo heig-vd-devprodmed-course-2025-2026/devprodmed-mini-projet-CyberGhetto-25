@@ -29,6 +29,10 @@
                         class="block bg-teal-700 dark:bg-purple-900px-3 py-1 rounded-md hover:bg-teal-800 dark:hover:bg-purple-800">
                         {{ __('ui.posts.index.title') }}
                     </a>
+                    <a href="{{ url('/events') }}"
+                        class="block bg-teal-700 dark:bg-purple-900 px-3 py-1 rounded-md hover:bg-teal-800 dark:hover:bg-purple-800">
+                        {{ __('ui.events.title') }}
+                    </a>
                 </div>
                     @auth
                     <a href="{{ url('/my-profile') }}" class="block hover:opacity-80 transition">

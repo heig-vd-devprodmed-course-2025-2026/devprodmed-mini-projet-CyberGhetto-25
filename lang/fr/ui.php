@@ -179,6 +179,66 @@ return [
             ],
         ],
     ],
+    'events' => [
+        'title' => 'Événements & Festivals',
+        'description' => 'Découvrez les prochains événements et festivals de musique.',
+        'no_events' => 'Aucun événement à afficher.',
+        'participants_count' => '{0} Aucun participant|{1} :count participant|[2,*] :count participants',
+        'view_event' => "Voir l'événement",
+        'create' => [
+            'title' => 'Créer un événement',
+            'description' => 'Créez un nouvel événement ou festival de musique.',
+    ],
+    'edit' => [
+        'title' => "Modifier l'événement",
+        'description' => "Modifiez les informations de l'événement.",
+    ],
+    'show' => [
+        'by' => 'Par :name',
+        'edit' => "Modifier",
+        'no_attendees' => 'Aucun participant pour le moment.',
+        'attendees_title' => 'Participants',
+    ],
+    'attendance' => [
+        'going' => '✅ Je participe',
+        'interested' => '⭐ Je suis intéressé',
+    ],
+    'form' => [
+        'fields' => [
+            'title' => [
+                'label' => "Nom de l'événement",
+                'placeholder' => 'Ex: Montreux Jazz Festival 2026',
+            ],
+            'description' => [
+                'label' => 'Description',
+                'placeholder' => "Décrivez votre événement...",
+            ],
+            'date' => [
+                'label' => 'Date et heure',
+            ],
+            'location' => [
+                'label' => 'Lieu',
+                'placeholder' => 'Ex: Montreux, Suisse',
+            ],
+            'genre' => [
+                'label' => 'Genre musical',
+                'placeholder' => 'Ex: Jazz, Rock, Électro...',
+            ],
+            'poster' => [
+                'label' => "Affiche de l'événement",
+                'help' => 'Formats acceptés : JPG, PNG, GIF, WEBP. Taille maximale : 4 Mo.',
+                'current' => 'Affiche actuelle — téléversez une nouvelle image pour la remplacer.',
+            ],
+        ],
+        'actions' => [
+            'submit_create' => "Créer l'événement",
+            'submit_edit' => 'Sauvegarder',
+            'cancel' => 'Annuler',
+            'delete' => 'Supprimer',
+            'delete_confirm' => "Souhaitez-vous vraiment supprimer cet événement ? Cette action est irréversible.",
+         ],
+        ],
+    ],
     'auth' => [
         'login' => [
             'title' => 'Connexion',
