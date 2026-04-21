@@ -8,6 +8,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MyProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\TokenController;
 
 Route::get('/', function () {
     $posts = Post::orderBy('created_at', 'desc')->with(['user', 'likes', 'comments'])->limit(3)->get();
@@ -40,3 +41,5 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('/auth/login', 'login');
     Route::post('/auth/logout', 'logout')->middleware('auth');
 });
+
+Route::resource('tokens', TokenController::class)->only(['index', 'create', 'store', 'destroy'])->middleware('auth');
