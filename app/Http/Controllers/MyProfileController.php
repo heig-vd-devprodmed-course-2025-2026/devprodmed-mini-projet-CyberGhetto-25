@@ -108,4 +108,16 @@ class MyProfileController extends Controller
 
         return redirect('/');
     }
+
+    /**
+     * Become an organizer.
+    */
+    public function becomeOrganizer(Request $request)
+    {
+        $user = $request->user();
+        $user->role = 'organizer';
+        $user->save();
+
+        return redirect('/my-profile');
+    }
 }

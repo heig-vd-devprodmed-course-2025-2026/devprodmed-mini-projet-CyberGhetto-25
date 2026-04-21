@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::singleton('my-profile', MyProfileController::class)->destroyable()->middleware('auth');
+Route::post('/my-profile/become-organizer', [MyProfileController::class, 'becomeOrganizer'])->middleware('auth');
 
 Route::controller(AuthController::class)->group(function () {
     Route::get('/auth/register', 'showRegister');
