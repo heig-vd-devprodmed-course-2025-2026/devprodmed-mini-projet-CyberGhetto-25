@@ -1,0 +1,20 @@
+info:
+  name: Delete one post
+  type: http
+  seq: 9
+
+http:
+  method: DELETE
+  url: http://localhost:8000/api/v1/posts/10
+  headers:
+    - name: Authorization
+      value: Bearer 7|CTgGu3DdQKQCdlKGpIAnv2NTySwIn4gZWpkaVSNqc5e666d6
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

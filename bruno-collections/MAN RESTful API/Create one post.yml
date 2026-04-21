@@ -1,0 +1,27 @@
+info:
+  name: Create one post
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: http://localhost:8000/api/v1/posts
+  headers:
+    - name: Authorization
+      value: Bearer 5|sgNSVATA42i50xQAuNaeaCWsf4M0X8Ri5citsxVDda4a6dd5
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Mon nouveau post",
+        "content": "Voici le contenu de mon nouveau post."
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
