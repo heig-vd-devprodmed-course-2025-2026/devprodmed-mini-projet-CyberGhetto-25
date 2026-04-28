@@ -7,7 +7,7 @@
         {{ __('ui.auth.login.description', ['app_name' => config('app.name')]) }}
     </x-slot>
 
-    <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 max-w-md mx-auto">
+    <article class="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-6 max-w-md mx-auto">
         <header class="mb-6">
             <h1 class="text-3xl font-bold dark:text-white mb-2">
                 {{ __('ui.auth.login.title') }}
@@ -27,7 +27,7 @@
                 </label>
                 <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus
                     placeholder="{{ __('ui.auth.login.form.fields.email.placeholder') }}"
-                    class="w-full px-3 py-2 border rounded-md bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent @error('email') border-red-500 focus:ring-red-500 @else border-gray-300 dark:border-gray-600 focus:ring-teal-500 dark:focus:ring-purple-500 @enderror">
+                    class="w-full px-3 py-2 border rounded-md bg-white dark:bg-neutral-700 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent @error('email') border-red-500 focus:ring-red-500 @else border-gray-300 dark:border-gray-600 focus:ring-amber-500 focus:ring-amber-500 @enderror">
                 @error('email')
                     <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                 @enderror
@@ -39,7 +39,7 @@
                 </label>
                 <input id="password" type="password" name="password" required
                     placeholder="{{ __('ui.auth.login.form.fields.password.placeholder') }}"
-                    class="w-full px-3 py-2 border rounded-md bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent @error('password') border-red-500 focus:ring-red-500 @else border-gray-300 dark:border-gray-600 focus:ring-teal-500 dark:focus:ring-purple-500 @enderror">
+                    class="w-full px-3 py-2 border rounded-md bg-white dark:bg-neutral-700 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent @error('password') border-red-500 focus:ring-red-500 @else border-gray-300 dark:border-gray-600 focus:ring-amber-500 focus:ring-amber-500 @enderror">
                 @error('password')
                     <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                 @enderror
@@ -48,7 +48,7 @@
             <div class="mb-6">
                 <label class="flex items-center">
                     <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}
-                        class="rounded border-gray-300 dark:border-gray-600 text-teal-600 dark:text-purple-500 focus:ring-teal-500 dark:focus:ring-purple-500">
+                        class="rounded border-gray-300 dark:border-gray-600 text-amber-500 dark:text-purple-500 focus:ring-amber-500 focus:ring-amber-500">
                     <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">
                         {{ __('ui.auth.login.form.fields.remember.label') }}
                     </span>
@@ -58,14 +58,14 @@
             <footer class="pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex flex-col gap-4">
                     <button type="submit"
-                        class="w-full px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800 cursor-pointer">
+                        class="w-full px-4 py-2 bg-amber-500 bg-amber-700 text-white rounded-md hover:bg-amber-600 hover:bg-amber-600 cursor-pointer">
                         {{ __('ui.auth.login.form.actions.submit') }}
                     </button>
 
                     <p class="text-center text-sm text-gray-600 dark:text-gray-400">
                         {{ __('ui.auth.login.no_account') }}
                         <a href="{{ url('/auth/register') }}"
-                            class="text-teal-600 dark:text-purple-400 hover:underline">
+                            class="text-amber-500 text-amber-400 hover:underline">
                             {{ __('ui.auth.login.register') }}
                         </a>
                     </p>

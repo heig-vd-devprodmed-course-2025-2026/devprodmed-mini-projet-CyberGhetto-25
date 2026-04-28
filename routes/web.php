@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Post;
+use App\Models\Event;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
@@ -13,9 +13,12 @@ use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\EventController;
 
 Route::get('/', function () {
-    $posts = Post::orderBy('created_at', 'desc')->with(['user', 'likes', 'comments'])->limit(3)->get();
+    $events = Event::orderBy('date', 'asc')
+        ->with('user')
+        ->with('attendances')
+        ->get();
 
-    return view('home', ['posts' => $posts]);
+    return view('events.index', ['events' => $events]);
 });
 
 Route::get('/about', function () {

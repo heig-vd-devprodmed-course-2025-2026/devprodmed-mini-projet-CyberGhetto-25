@@ -1,9 +1,9 @@
-<article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+<article class="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-6">
     <header class="mb-4">
         <div class="flex items-center gap-3 mb-3">
             <a href="{{ url('@' . $post->user->username) }}">
                 <div
-                    class="h-10 w-10 rounded-full bg-teal-600 dark:bg-purple-900 flex items-center justify-center text-white font-semibold hover:bg-teal-700 dark:hover:bg-purple-800">
+                    class="h-10 w-10 rounded-full bg-amber-500 bg-amber-700 flex items-center justify-center text-white font-semibold hover:bg-amber-600 hover:bg-amber-600">
                     {{ strtoupper(substr($post->user->first_name, 0, 1) . substr($post->user->last_name, 0, 1)) }}
                 </div>
             </a>
@@ -49,7 +49,7 @@
                 @endif
             </div>
             <a href="{{ url('/posts/' . $post->id) }}"
-                class="px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800">
+                class="px-4 py-2 bg-amber-500 bg-amber-700 text-white rounded-md hover:bg-amber-600 hover:bg-amber-600">
                 {{ __('ui.posts.view_post') }}
             </a>
         </div>
