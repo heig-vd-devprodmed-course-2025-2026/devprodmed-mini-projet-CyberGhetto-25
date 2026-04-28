@@ -20,7 +20,7 @@ return [
     'about' => [
         'title' => 'À propos',
         'description' => 'Page à propos de notre réseau social.',
-        'introduction' => 'Ce réseau social a été créé pour permettre aux utilisateur.trices de partager leurs pensées et leurs idées avec le monde entier.',
+        'introduction' => 'Ce réseau social a été créé pour permettre aux utilisateur.trices de découvrir des événements et festivals de musique. En plus de partager leurs pensées et leurs idées avec le monde entier.',
         'disclaimer' => "Ce réseau social est un projet réalisé dans le cadre d'un cours de la HEIG-VD, Suisse.",
         'copyright' => '© :year Tous droits réservés.',
     ],

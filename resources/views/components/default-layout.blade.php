@@ -17,27 +17,29 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <body class="flex min-h-screen flex-col bg-slate-50 dark:bg-slate-900">
-        <header class="bg-teal-600 text-white dark:bg-slate-800">
+    <body class="flex min-h-screen flex-col bg-neutral-950">
+        <header class="bg-neutral-900 text-white">
             <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="h-16 flex items-center justify-between">
                     <div class="flex items-center gap-4">
-                    <a href="{{ url('/') }}" class="block hover:opacity-80 transition">
+                    <a href="{{ url('/') }}"
+                        class="block hover:opacity-80 transition text-amber-500 font-bold"
+                        style="font-family: 'DM Sans', sans-serif; font-weight: 800;">
                         {{ config('app.name') }}
                     </a>
-                    <a href="{{ url('/posts') }}"
-                        class="block bg-teal-700 dark:bg-purple-900px-3 py-1 rounded-md hover:bg-teal-800 dark:hover:bg-purple-800">
-                        {{ __('ui.posts.index.title') }}
-                    </a>
                     <a href="{{ url('/events') }}"
-                        class="block bg-teal-700 dark:bg-purple-900 px-3 py-1 rounded-md hover:bg-teal-800 dark:hover:bg-purple-800">
+                        class="block bg-neutral-800 px-3 py-1 rounded-md hover:bg-neutral-700 text-neutral-100 text-sm">
                         {{ __('ui.events.title') }}
+                    </a>
+                    <a href="{{ url('/posts') }}"
+                        class="block bg-neutral-800 px-3 py-1 rounded-md hover:bg-neutral-700 text-neutral-100 text-sm">
+                        {{ __('ui.posts.index.title') }}
                     </a>
                 </div>
                     @auth
                     <a href="{{ url('/my-profile') }}" class="block hover:opacity-80 transition">
                         <div
-                            class="h-8 w-8 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                            class="h-8 w-8 rounded-full overflow-hidden bg-amber-500 flex items-center justify-center">
                             @if (Auth::user()->profile_picture)
                                 <img src="{{ asset('storage/' . Auth::user()->profile_picture) }}"
                                     alt="{{ Auth::user()->username }}" class="w-full h-full object-cover">
@@ -49,11 +51,11 @@
                 @else
                     <div class="flex items-center gap-2">
                         <a href="{{ url('/auth/login') }}"
-                            class="block px-3 py-1 rounded-md hover:bg-teal-700 dark:hover:bg-slate-700 transition">
+                            class="block px-3 py-1 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-800 transition text-sm">
                             {{ __('ui.auth.login.title') }}
                         </a>
                         <a href="{{ url('/auth/register') }}"
-                            class="block bg-teal-700 dark:bg-purple-900 px-3 py-1 rounded-md hover:bg-teal-800 dark:hover:bg-purple-800 transition">
+                            class="block bg-amber-500 text-neutral-900 px-3 py-1 rounded-md hover:bg-amber-600 transition text-sm font-bold">
                             {{ __('ui.auth.register.title') }}
                         </a>
                     </div>
@@ -62,13 +64,11 @@
             </nav>
         </header>
 
-        <main
-            class="container mx-auto px-4 py-8 sm:px-6 lg:px-8 flex-grow dark:text-white max-w-2xl"
-        >
+        <main class="container mx-auto px-4 py-8 sm:px-6 lg:px-8 flex-grow text-neutral-100 max-w-2xl">
             {{ $slot }}
         </main>
 
-        <footer class="bg-teal-600 text-white text-sm dark:bg-slate-800">
+        <footer class="bg-neutral-900 text-neutral-400 text-sm">
             <div class="container mx-auto px-4 py-6 sm:px-6 lg:px-8">
                 <div
                     class="h-16 flex flex-col items-center justify-between gap-4 sm:flex-row"

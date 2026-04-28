@@ -7,7 +7,7 @@
         {{ __('ui.my_profile.show.description') }}
     </x-slot>
 
-    <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 text-center">
+    <article class="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-6 text-center">
         <div class="flex justify-center mb-6">
             <div
                 class="w-32 h-32 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
@@ -38,7 +38,7 @@
 
         <div class="flex flex-col sm:flex-row justify-center gap-3 mt-6">
             <a href="{{ url('/my-profile/edit') }}"
-                class="px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800">
+                class="px-4 py-2 bg-amber-500 bg-amber-700 text-white rounded-md hover:bg-amber-600 hover:bg-amber-600">
                 {{ __('ui.my_profile.show.actions.edit') }}
             </a>
             <a href="{{ url('/@' . $user->username) }}"
@@ -53,7 +53,7 @@
             <form method="POST" action="{{ url('/my-profile/become-organizer') }}" class="inline">
                 @csrf
                 <button type="submit"
-                    class="px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800 cursor-pointer">
+                    class="px-4 py-2 bg-amber-500 bg-amber-700 text-white rounded-md hover:bg-amber-600 hover:bg-amber-600 cursor-pointer">
                     {{ __('ui.my_profile.show.actions.become_organizer') }}
                 </button>
             </form>

@@ -1,4 +1,4 @@
-<article class="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden">
+<article class="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
     @if ($event->poster)
         <a href="{{ url('/events/' . $event->id) }}">
             <img src="{{ asset('storage/' . $event->poster) }}"
@@ -15,7 +15,7 @@
                 </h2>
             </a>
             @if ($event->genre)
-                <span class="text-xs px-2 py-1 bg-teal-100 dark:bg-purple-900 text-teal-800 dark:text-purple-200 rounded-full">
+                <span class="text-xs px-2 py-1 bg-amber-900 text-amber-300 rounded-full">
                     {{ $event->genre }}
                 </span>
             @endif
@@ -48,7 +48,7 @@
                     {{ trans_choice('ui.events.participants_count', count($event->attendances)) }}
                 </span>
                 <a href="{{ url('/events/' . $event->id) }}"
-                    class="px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800">
+                    class="px-4 py-2 bg-amber-500 bg-amber-700 text-white rounded-md hover:bg-amber-600 hover:bg-amber-600">
                     {{ __('ui.events.view_event') }}
                 </a>
             </div>

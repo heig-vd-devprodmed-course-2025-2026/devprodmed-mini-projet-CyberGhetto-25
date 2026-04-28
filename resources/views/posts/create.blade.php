@@ -7,7 +7,7 @@
         {{ __('ui.posts.create.description', ['app_name' => config('app.name')]) }}
     </x-slot>
 
-    <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+    <article class="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-6">
         <header class="mb-6">
             <h1 class="text-3xl font-bold dark:text-white mb-2">
                 {{ __('ui.posts.create.title') }}
@@ -27,7 +27,7 @@
                 </label>
                 <input id="title" type="text" name="title" value="{{ old('title') }}"
                     placeholder="{{ __('ui.posts.form.fields.title.placeholder') }}"
-                    class="w-full px-3 py-2 border rounded-md bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent @error('title') border-red-500 focus:ring-red-500 @else border-gray-300 dark:border-gray-600 focus:ring-teal-500 dark:focus:ring-purple-500 @enderror">
+                    class="w-full px-3 py-2 border rounded-md bg-white dark:bg-neutral-700 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent @error('title') border-red-500 focus:ring-red-500 @else border-gray-300 dark:border-gray-600 focus:ring-amber-500 focus:ring-amber-500 @enderror">
                 @error('title')
                     <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                 @enderror
@@ -39,7 +39,7 @@
                 </label>
                 <textarea id="content" name="content" rows="5"
                     placeholder="{{ __('ui.posts.form.fields.content.placeholder') }}"
-                    class="w-full px-3 py-2 border rounded-md bg-white dark:bg-slate-700 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent @error('content') border-red-500 focus:ring-red-500 @else border-gray-300 dark:border-gray-600 focus:ring-teal-500 dark:focus:ring-purple-500 @enderror">{{ old('content') }}</textarea>
+                    class="w-full px-3 py-2 border rounded-md bg-white dark:bg-neutral-700 text-gray-900 dark:text-white focus:ring-2 focus:border-transparent @error('content') border-red-500 focus:ring-red-500 @else border-gray-300 dark:border-gray-600 focus:ring-amber-500 focus:ring-amber-500 @enderror">{{ old('content') }}</textarea>
                 @error('content')
                     <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                 @enderror
@@ -52,7 +52,7 @@
                         {{ __('ui.posts.form.actions.cancel') }}
                     </a>
                     <button type="submit"
-                        class="px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800 cursor-pointer">
+                        class="px-4 py-2 bg-amber-500 bg-amber-700 text-white rounded-md hover:bg-amber-600 hover:bg-amber-600 cursor-pointer">
                         {{ __('ui.posts.form.actions.submit') }}
                     </button>
                 </div>

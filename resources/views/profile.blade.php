@@ -7,7 +7,7 @@
         {{ __('ui.profile.description', ['username' => $user->username]) }}
     </x-slot>
 
-    <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 text-center mb-8">
+    <article class="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-6 text-center mb-8">
         <div class="flex justify-center mb-6">
             <div
                 class="w-32 h-32 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700 flex items-center justify-center">

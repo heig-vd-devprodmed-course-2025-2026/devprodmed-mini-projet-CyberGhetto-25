@@ -7,7 +7,7 @@
         {{ $event->title }} — {{ $event->location }}
     </x-slot>
 
-    <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md overflow-hidden">
+    <article class="bg-white dark:bg-neutral-800 rounded-lg shadow-md overflow-hidden">
         @if ($event->poster)
             <img src="{{ asset('storage/' . $event->poster) }}"
                 alt="Affiche de {{ $event->title }}"
@@ -20,7 +20,7 @@
                     {{ $event->title }}
                 </h1>
                 @if ($event->genre)
-                    <span class="text-sm px-2 py-1 bg-teal-100 dark:bg-purple-900 text-teal-800 dark:text-purple-200 rounded-full">
+                    <span class="text-sm px-2 py-1 bg-amber-900 text-amber-300 rounded-full">
                         {{ $event->genre }}
                     </span>
                 @endif
@@ -35,7 +35,7 @@
                 @can('update', $event)
                     &middot;
                     <a href="{{ url('/events/' . $event->id . '/edit') }}"
-                        class="text-teal-600 dark:text-purple-400 hover:underline">
+                        class="text-amber-500 text-amber-400 hover:underline">
                         {{ __('ui.events.show.edit') }}
                     </a>
                 @endcan
@@ -56,15 +56,15 @@
                         <button type="submit" name="status" value="going"
                             class="flex-1 px-4 py-2 rounded-md font-semibold cursor-pointer transition
                                 {{ $status === 'going'
-                                    ? 'bg-teal-600 dark:bg-purple-900 text-white'
-                                    : 'bg-gray-100 dark:bg-slate-700 text-gray-800 dark:text-white hover:bg-teal-100 dark:hover:bg-purple-800' }}">
+                                    ? 'bg-amber-500 bg-amber-700 text-white'
+                                    : 'bg-neutral-700 text-neutral-300 hover:bg-amber-700 hover:text-white'}}">
                             {{ __('ui.events.attendance.going') }}
                         </button>
                         <button type="submit" name="status" value="interested"
                             class="flex-1 px-4 py-2 rounded-md font-semibold cursor-pointer transition
                                 {{ $status === 'interested'
-                                    ? 'bg-teal-600 dark:bg-purple-900 text-white'
-                                    : 'bg-gray-100 dark:bg-slate-700 text-gray-800 dark:text-white hover:bg-teal-100 dark:hover:bg-purple-800' }}">
+                                    ? 'bg-amber-500 bg-amber-700 text-white'
+                                    : 'bg-neutral-700 text-neutral-300 hover:bg-amber-700 hover:text-white'}}">
                             {{ __('ui.events.attendance.interested') }}
                         </button>
                     </div>
@@ -82,8 +82,8 @@
                             <a href="{{ url('@' . $attendee->username) }}"
                                 class="flex items-center gap-1 text-sm px-3 py-1 rounded-full hover:underline
                                     {{ $attendee->pivot->status === 'going'
-                                        ? 'bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200'
-                                        : 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200' }}">
+                                        ? 'bg-amber-900 text-amber-300'
+                                        : 'bg-neutral-700 text-neutral-300' }}">
                                 {{ $attendee->pivot->status === 'going' ? '✅' : '⭐' }}
                                 {{ '@' . $attendee->username }}
                             </a>

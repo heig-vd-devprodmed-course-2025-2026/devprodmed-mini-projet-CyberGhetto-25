@@ -26,7 +26,7 @@
     </div>
 
     <a href="{{ url('/posts') }}"
-        class="mt-6 block w-full px-4 py-2 bg-teal-600 dark:bg-purple-900 text-white rounded-md hover:bg-teal-700 dark:hover:bg-purple-800 text-center">
+        class="mt-6 block w-full px-4 py-2 bg-amber-500 bg-amber-700 text-white rounded-md hover:bg-amber-600 hover:bg-amber-600 text-center">
         {{ __('ui.home.see_all_posts') }}
     </a>
 </x-default-layout>

@@ -29,7 +29,7 @@
         @endif
     </x-slot>
 
-    <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6">
+    <article class="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-6">
         <header class="mb-6">
             @if ($post->title)
                 <h1 class="text-3xl font-bold dark:text-white mb-2">
@@ -137,7 +137,7 @@
         </h2>
 
         @forelse ($post->comments->sortByDesc('created_at') as $comment)
-            <div class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-4 mb-3">
+            <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-4 mb-3">
                 <div class="flex items-center justify-between mb-2">
                     <a href="{{ url('@' . $comment->user->username) }}" class="font-semibold text-sm dark:text-white hover:underline">
                         {{ '@' . $comment->user->username }}
@@ -168,7 +168,7 @@
 
         <div class="mt-6">
             @auth
-                <form method="POST" action="{{ url('/posts/' . $post->id . '/comments') }}" class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-4">
+                <form method="POST" action="{{ url('/posts/' . $post->id . '/comments') }}" class="bg-white dark:bg-neutral-800 rounded-lg shadow-md p-4">
                     @csrf
                     <div class="mb-3">
                         <label for="content" class="block text-sm font-medium dark:text-white mb-1">
@@ -179,13 +179,13 @@
                             name="content"
                             rows="3"
                             placeholder="{{ __('ui.posts.comments.form.placeholder') }}"
-                            class="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 text-sm dark:bg-slate-700 dark:text-white"
+                            class="w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 text-sm dark:bg-neutral-700 dark:text-white"
                         >{{ old('content') }}</textarea>
                         @error('content')
                             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
                         @enderror
                     </div>
-                    <button type="submit" class="text-sm bg-teal-600 dark:bg-purple-900 text-white px-4 py-2 rounded-md hover:opacity-90 cursor-pointer">
+                    <button type="submit" class="text-sm bg-amber-500 bg-amber-700 text-white px-4 py-2 rounded-md hover:opacity-90 cursor-pointer">
                         {{ __('ui.posts.comments.form.submit') }}
                     </button>
                 </form>
