@@ -66,6 +66,34 @@
                             {{ __('ui.tokens.form.fields.scopes.options.posts_delete') }}
                         </label>
                     </div>
+                    <div class="flex items-center mb-2">
+                        <input type="checkbox" id="scope-events:read" name="scopes[]" value="events:read"
+                            {{ in_array('events:read', old('scopes', [])) ? 'checked' : '' }} class="mr-2">
+                        <label for="scope-events:read" class="text-sm text-gray-700 dark:text-gray-300">
+                            {{ __('ui.tokens.form.fields.scopes.options.events_read') }}
+                        </label>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <input type="checkbox" id="scope-events:create" name="scopes[]" value="events:create"
+                            {{ in_array('events:create', old('scopes', [])) ? 'checked' : '' }} class="mr-2">
+                        <label for="scope-events:create" class="text-sm text-gray-700 dark:text-gray-300">
+                            {{ __('ui.tokens.form.fields.scopes.options.events_create') }}
+                            </label>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <input type="checkbox" id="scope-events:update" name="scopes[]" value="events:update"
+                                {{ in_array('events:update', old('scopes', [])) ? 'checked' : '' }} class="mr-2">
+                            <label for="scope-events:update" class="text-sm text-gray-700 dark:text-gray-300">
+                                {{ __('ui.tokens.form.fields.scopes.options.events_update') }}
+                            </label>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <input type="checkbox" id="scope-events:delete" name="scopes[]" value="events:delete"
+                                {{ in_array('events:delete', old('scopes', [])) ? 'checked' : '' }} class="mr-2">
+                            <label for="scope-events:delete" class="text-sm text-gray-700 dark:text-gray-300">
+                                {{ __('ui.tokens.form.fields.scopes.options.events_delete') }}
+                            </label>
+                        </div>
                     @error('scopes')
                         <p class="mt-1 text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
                     @enderror
