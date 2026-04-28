@@ -1,0 +1,24 @@
+info:
+  name: Get all events
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: http://localhost:8000/api/v1/events
+  headers:
+    - name: Authorization
+      value: Bearer 8|kA0RWaGfwEXWr7WQipIaw9o2EWA3KitPKxFvdpnA2ff77b84
+    - name: Accept
+      value: application/json
+  params:
+    - name: ""
+      value: ""
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
