@@ -1,0 +1,20 @@
+info:
+  name: Delete one event
+  type: http
+  seq: 11
+
+http:
+  method: DELETE
+  url: http://localhost:8000/api/v1/events/6
+  headers:
+    - name: Authorization
+      value: Bearer 11|vUtbhUXDjSXfrIQGpHX3T61Kf2UxNHfzmG4LxhHT0e451dd3
+    - name: Accept
+      value: application/json
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

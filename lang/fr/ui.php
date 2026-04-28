@@ -59,6 +59,10 @@ return [
                         'posts_read' => 'Lire les posts',
                         'posts_update' => 'Modifier des posts',
                         'posts_delete' => 'Supprimer des posts',
+                        'events_read'   => 'Lire les événements',
+                        'events_create' => 'Créer des événements',
+                        'events_update' => 'Modifier des événements',
+                        'events_delete' => 'Supprimer des événements',
                     ],
                 ],
                 'content' => [

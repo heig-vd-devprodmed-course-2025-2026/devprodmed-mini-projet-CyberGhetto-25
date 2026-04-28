@@ -1,0 +1,29 @@
+info:
+  name: Create one event
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: http://localhost:8000/api/v1/events
+  headers:
+    - name: Authorization
+      value: Bearer 9|XfoiMyo4jc04nbpyEGS45R8qsfITK79yA0PXPh3wffc3e1b9
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Test create event",
+        "description": "Descr Test",
+        "date": "2026-10-31 23:00:00", 
+        "location": "Test location"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

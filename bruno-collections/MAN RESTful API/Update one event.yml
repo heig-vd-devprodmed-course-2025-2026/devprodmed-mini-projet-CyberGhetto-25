@@ -1,0 +1,30 @@
+info:
+  name: Update one event
+  type: http
+  seq: 10
+
+http:
+  method: PUT
+  url: http://localhost:8000/api/v1/events/6
+  headers:
+    - name: Authorization
+      value: Bearer 10|nVNYkDcwcXV6zUlDPZhMDRqjbjQsJWkgwbDBMgX18738bb6b
+    - name: Accept
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Titre modifié",
+        "description": "Contenu modifié.",
+        "genre": "Acidcore",
+        "date": "2026-10-30 22:00:00",
+        "location": "updated location"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
